@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Assistant</h1>
+
+    <form method="POST">
+
+        <select name="task">
+            <option value="question">Answer Question</option>
+            <option value="summary">Summarize Text</option>
+            <option value="creative">Generate Creative Content</option>
+        </select>
+
+        <input type="text" name="user_input" placeholder="Enter your text here" required>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
